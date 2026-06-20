@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>333体育 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf9f8;
+            color: #1e1e1e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-wrap {
+            max-width: 720px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 3rem 0 4rem;
+            flex: 1;
+        }
+
+        /* 极简 hero 区域 */
+        .hero {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #e6e3e0;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #6b6b6b;
+            max-width: 600px;
+        }
+
+        /* 标题层级 */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #1e1e1e;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 480;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+            color: #2a2a2a;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b3b3b;
+        }
+
+        /* 摘要卡片风格 */
+        .summary-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0 2.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid #efedec;
+        }
+
+        .summary-card p {
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+        }
+
+        .summary-card .quote {
+            font-style: normal;
+            border-left: 3px solid #cbc6c2;
+            padding-left: 1.2rem;
+            color: #4f4f4f;
+            margin: 1rem 0 0.3rem;
+        }
+
+        /* 特点网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.4rem 1.2rem;
+            border: 1px solid #eeecea;
+        }
+
+        .feature-item .label {
+            font-weight: 480;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: #8b847e;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #363636;
+        }
+
+        /* 场景区块 */
+        .scene-block {
+            background: #f4f2f0;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2.4rem 0 2.8rem;
+        }
+
+        .scene-block p {
+            font-size: 0.98rem;
+        }
+
+        .scene-block .scene-note {
+            font-size: 0.9rem;
+            color: #6e6e6e;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #d9d4d0;
+        }
+
+        /* 提示 / FAQ 摘要 */
+        .tip-area {
+            margin: 2.8rem 0 2rem;
+            padding: 0.2rem 0;
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .tip-marker {
+            font-weight: 400;
+            color: #9a938d;
+            min-width: 2.2rem;
+            font-size: 0.95rem;
+        }
+
+        .tip-text {
+            font-size: 0.96rem;
+            color: #3a3a3a;
+        }
+
+        /* 链接样式 (严格只显示“333体育”) */
+        a {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e6e3e0;
+            font-size: 0.85rem;
+            color: #8b8885;
+            text-align: left;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page-wrap {
+                width: 92%;
+                padding: 2rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .summary-card,
+            .scene-block {
+                padding: 1.4rem 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                margin-top: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- hero 极简 -->
+        <div class="hero">
+            <h1>333体育 · 产品说明</h1>
+            <div class="sub">围绕日常运动与信息管理，一份克制的功能与使用参考。</div>
+        </div>
+
+        <!-- 摘要卡片 -->
+        <div class="summary-card">
+            <p>一套围绕运动场景构建的轻量化产品，整合了赛程追踪、个人记录与内容提醒。没有冗余的社交干扰，也没有夸张的数据承诺——只关注运动爱好者真正需要的工具属性。</p>
+            <div class="quote">“设计上更接近一个朴素的数字伴侣，而非又一个需要维护的社区身份。”</div>
+        </div>
+
+        <!-- 特点／亮点 网格 -->
+        <h2>功能亮点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="label">赛程管理</div>
+                <p>关注的项目、联赛或自定义时间线，以卡片方式呈现，支持快速筛选与标记。</p>
+            </div>
+            <div class="feature-item">
+                <div class="label">个人记录</div>
+                <p>轻量级的运动日志，可记录距离、时长与主观感受，数据留存于本地账户。</p>
+            </div>
+            <div class="feature-item">
+                <div class="label">信息提醒</div>
+                <p>针对重点赛事或自定义节点推送通知，频率可调，避免信息过载。</p>
+            </div>
+            <div class="feature-item">
+                <div class="label">内容聚合</div>
+                <p>精选赛事摘要与运动文化短文，以简洁的时间流呈现，不带算法竞价排序。</p>
+            </div>
+        </div>
+
+        <!-- 使用场景与建议 -->
+        <h2>使用场景建议</h2>
+        <div class="scene-block">
+            <p>日常训练或观赛前后，可以快速记录状态、查看下一场关注赛事的倒计时。如果你习惯用纸笔或备忘录管理运动安排，<a href="https://portal-333sports.com">333体育</a> 提供了一个更集中的数字替代方案。</p>
+            <p>由于产品不涉及社交广场或战绩排名，更适合那些希望保持低干扰、只关注自身运动节奏的使用者。建议每周花几分钟整理记录，长期下来会形成一份有意义的个人运动档案。</p>
+            <div class="scene-note">※ 功能仍在迭代中，部分高级自定义选项需要登录后可见。</div>
+        </div>
+
+        <!-- FAQ 摘要 + 提示 -->
+        <h2>一些常见疑问</h2>
+        <div class="tip-area">
+            <div class="tip-item">
+                <span class="tip-marker">Q1</span>
+                <span class="tip-text">是否需要注册才能使用基础功能？大部分浏览与赛程查看功能可以直接访问，但个人记录与提醒需要注册账户。</span>
+            </div>
+            <div class="tip-item">
+                <span class="tip-marker">Q2</span>
+                <span class="tip-text">数据如何存储？账户数据采用常规加密传输，运动日志仅关联你的账户，不会主动分享给第三方。</span>
+            </div>
+            <div class="tip-item">
+                <span class="tip-marker">Q3</span>
+                <span class="tip-text">是否支持多运动项目？是的，你可以在设置中选择主要关注的项目，包括但不限于足球、篮球、网球、跑步等。</span>
+            </div>
+        </div>
+        <p style="font-size: 0.92rem; color: #6f6f6f; margin-top: -0.2rem;">更多说明可参考产品内的帮助页面，或直接体验 <a href="https://portal-333sports.com">333体育</a> 的核心界面。</p>
+
+        <!-- 可信但克制的访问说明 -->
+        <h3>关于访问</h3>
+        <p style="font-size: 0.95rem; color: #4a4a4a; max-width: 620px;">当前版本通过主流浏览器即可打开，移动端与桌面端均做了适配。产品不包含弹窗广告或自动跳转，所有链接均为用户主动操作。如果你希望了解更多背景或功能逻辑，直接使用 <a href="https://portal-333sports.com">333体育</a> 是最直接的了解方式。</p>
+
+        <!-- 页脚 -->
+        <div class="footer-note">
+            <span>333体育 · 产品介绍页 · 信息仅供参考，功能以实际版本为准。</span>
+        </div>
+    </div>
+</body>
+</html>
